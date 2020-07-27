@@ -1,7 +1,6 @@
 package tps
 
 import (
-  "fmt"
   "net/http"
   "log"
   "golang.org/x/net/html"
