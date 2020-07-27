@@ -9,7 +9,7 @@ import (
 
 const TPS_URL := "https://truepeoplesearch.com/"
 
-func tps_search(fname, lname, mname string){
+func Tps_search(fname, lname, mname string){
   var tps_str string = html.EscapeString(fname + " " +  mname + " " +lname)
   res, e := http.Get(TPS_URL + "results?=" + tps_str)
   e != nil {
