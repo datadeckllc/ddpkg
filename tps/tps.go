@@ -5,18 +5,24 @@ import (
   "net/http"
   "log"
   "golang.org/x/net/html"
+  "io"
 )
-
 const TPS_URL = "https://truepeoplesearch.com/"
 
-func Tps_search(fname, lname, mname string){
-  var tps_str string = html.EscapeString(fname + " " +  mname + " " +lname)
+func Search(name, city, state string) *html.Node {
+  var tps_str string = html.EscapeString(name + "&citystatezip=" + city + state)
+
   res, e := http.Get(TPS_URL + "results?=" + tps_str)
-  e != nil {
-    log.Fatal(e)
+  if e != nil {
+    log.Fatalln(e)
+  }
+  defer res.Body.Close()
+
+
+  doc, e := html.Parse(io.Reader(res.Body))
+  if e != nil {
+    log.Fatalln(e)
   }
 
-  defer tps.Body.Close()
-  doc, e := html.Parse(res)
-  fmt.Printf("%T\n", )
+  return doc
 }
