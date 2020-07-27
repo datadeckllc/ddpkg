@@ -7,7 +7,7 @@ import (
   "golang.org/x/net/html"
 )
 
-const TPS_URL := "https://truepeoplesearch.com/"
+const TPS_URL = "https://truepeoplesearch.com/"
 
 func Tps_search(fname, lname, mname string){
   var tps_str string = html.EscapeString(fname + " " +  mname + " " +lname)
