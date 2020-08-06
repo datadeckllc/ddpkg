@@ -9,12 +9,12 @@
 1.  Run `bash build.sh` to build the Go packages
 
 
-# Using ddpkkg/sosCA as a CLI tool
+# Using ddpkkg/sosCa as a CLI tool
 
 1.  Run the following command in Terminal from the ddpkg directory
-`bash sosCA/run.sh sosCA/<input_file>.csv`
+`bash sosCa/run.sh sosCa/<input_file>.csv`
 
-e.g.: `bash sosCA/run.sh sosCA/test.csv`
+e.g.: `bash sosCa/run.sh sosCa/test.csv`
 
 NOTE: THe `test.csv` already exists.
 
